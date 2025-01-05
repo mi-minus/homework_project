@@ -11,7 +11,7 @@
 
     <parent>
         <groupId>cn.swifthealth</groupId>
-        <artifactId>wms-project</artifactId>
+        <artifactId>homework-project</artifactId>
         <version>1.0.0</version>
     </parent>
 
