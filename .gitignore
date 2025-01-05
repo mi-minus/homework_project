@@ -70,6 +70,8 @@ replay_pid*
 # auto-import.
 # .idea/artifacts
 .idea/compiler.xml
+.idea/checkstyle-idea.xml
+.idea/misc.xml
 # .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml

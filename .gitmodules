@@ -1,8 +1,0 @@
-[submodule "saas-project/swift-common-project"]
-	path = saas-project/swift-common-project
-	url = git@swifthealthgitlab.com:air-hos-common/swift-common-project.git
-	branch = saas-master
-[submodule "saas-project/code-generate"]
-	path = saas-project/code-generate
-	url = git@swifthealthgitlab.com:air-hos-other/swifthealth-curd-cli.git
-	branch = master
