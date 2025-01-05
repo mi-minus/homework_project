@@ -27,11 +27,11 @@ The project is combined by three big modules:
 ## Description of specific codes
 1) **Bootstrap class**: `cn.swifthealth.starter.ManagementStarter`
 2) **Configuration classes**:
-   * caffeineCache config: 
+   * caffeineCache config:
      `cn.swifthealth.management.configuration.CacheConfig`
-   * threadPool config: 
+   * threadPool config:
      `cn.swifthealth.management.configuration.ThreadPoolTaskConfig`
-   * web path config: 
+   * web path config:
      `cn.swifthealth.management.configuration.WebConfiguration`
 3) **Incidents operation**:  (including add/query/update/delete)
    `cn.swifthealth.management.manage.hosinfo.controller.DeptController`
@@ -42,7 +42,7 @@ The project is combined by three big modules:
    `test.cn.swifthealth.manage.hosinfo.controller.DeptControllerTests`
    `test.cn.swifthealth.manage.hosinfo.service.DeptServiceTests`
    `scala.cn.swifthealth.manage.hosinfo.DeptInfoApi`
-6) **Parameter configuration files**: 
+6) **Parameter configuration files**:
    `bootstrap.properties`
    `bootstrap-default.properties`
    `bootstrap-local.properties`
@@ -54,17 +54,27 @@ The project is combined by three big modules:
    `cn.swifthealth.common.jsonRes.ResponseMessage`
 
 ## Interface test cases
-1) **Add Incident**
-![img.png](img/img.png)
-![img_1.png](img/img_1.png)
-2) **Query Incident**
-![img_2.png](img/img_2.png)
-3) **Update Incident**
-![img_3.png](img/img_3.png)
-![img_4.png](img/img_4.png)
-4) **Delete Incident**'
-![img_5.png](img/img_5.png)
-![img_6.png](img/img_6.png)
 
+**Incident Defination**:  There are many departments in the hospital, and this project mainly involves manipulating departmental information.
+
+1) **Add Incident**
+   ![img.png](img/img.png)
+   ![img_1.png](img/img_1.png)
+2) **Query Incident**
+   ![img_2.png](img/img_2.png)
+3) **Update Incident**
+   ![img_3.png](img/img_3.png)
+   ![img_4.png](img/img_4.png)
+4) **Delete Incident**'
+   ![img_5.png](img/img_5.png)
+   ![img_6.png](img/img_6.png)
 5) **Unit Test**
-![img.png](img/img-7.png)
+   ![img.png](img/img_7.png)
+
+## Others
+1) MemDb-H2, web access address: http://127.0.0.1:9009/management/h2
+   * username: sa
+   * password: 123456
+   * jdbc-url: jdbc:h2:mem:testdb
+     ![img.png](img/img_8.png)
+     ![img_1.png](img/img_9.png)
