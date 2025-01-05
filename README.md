@@ -75,6 +75,13 @@ The project is combined by three big modules:
 ![img_6.png](img/img_6.png)
 5) **Unit Test**
 ![img.png](img/img_7.png)
+6) **Performance:Stress Test**
+> stress test script(Python): ./py_performance_test.py
+
+> From the below test picture, we can see that the four interfaces for adding,deleting, 
+> modifying and querying of dept are executed in sequence, with each interface executed 10000 times, 
+> taking a total of about 55 seconds.
+![img.png](img.png)
 
 ## Others
 1) MemDb-H2, web access address: http://127.0.0.1:9009/management/h2

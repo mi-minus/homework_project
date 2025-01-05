@@ -1,0 +1,11 @@
+# dependencies and versions
+    python3>=3.10.0
+    requests=='2.25.1'
+    pytest=='8.3.4'
+
+# install pytest-ordering tool
+    pip3 install pytest-ordering
+
+# execute method
+    $ cd ~/py_performance_test
+    $ pytest dept_performance_test.py
