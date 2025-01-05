@@ -81,7 +81,7 @@ The project is combined by three big modules:
 > From the below test picture, we can see that the four interfaces for adding,deleting, 
 > modifying and querying of dept are executed in sequence, with each interface executed 10000 times, 
 > taking a total of about 55 seconds.
-![img.png](img.png)
+![img.png](img/img_10.png)
 
 ## Others
 1) MemDb-H2, web access address: http://127.0.0.1:9009/management/h2
