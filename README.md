@@ -36,6 +36,8 @@ The project is combined by three big modules:
      `cn.swifthealth.management.configuration.ThreadPoolTaskConfig`
    * web path config: 
      `cn.swifthealth.management.configuration.WebConfiguration`
+   * object mapper tool config:
+      `cn.swifthealth.management.configuration.JacksonConfig`
 3) **Incidents operation**:  (including add/query/update/delete)
    `cn.swifthealth.management.manage.hosinfo.controller.DeptController`
    `cn.swifthealth.management.manage.hosinfo.service.DeptService`
@@ -83,3 +85,4 @@ The project is combined by three big modules:
 ![img_1.png](img/img_9.png)
 
 2) Page start from 0 in the pagination parameter of list query
+
