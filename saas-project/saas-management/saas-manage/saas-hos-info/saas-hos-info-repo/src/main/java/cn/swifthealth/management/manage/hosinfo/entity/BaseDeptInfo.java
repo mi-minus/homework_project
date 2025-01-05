@@ -3,6 +3,7 @@ package cn.swifthealth.management.manage.hosinfo.entity;
 import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @ToString
 @Getter

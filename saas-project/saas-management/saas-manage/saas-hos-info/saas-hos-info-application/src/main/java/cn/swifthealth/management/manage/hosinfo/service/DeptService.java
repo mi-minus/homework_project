@@ -103,6 +103,9 @@ public class DeptService {
      * 删除科室
      */
     public boolean updateDeptInfo(BaseDeptInfo deptInfo) {
+        Assert.isNotNull(deptInfo, () -> {
+            throw new APIException("入参不可为空");
+        });
         Assert.isNotEmpty(deptInfo.getDeptCode(), () -> {
             throw new APIException("科室编码不可为空");
         });
