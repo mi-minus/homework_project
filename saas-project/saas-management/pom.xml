@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.swifthealth.management</groupId>
+    <artifactId>saas-management</artifactId>
+    <packaging>pom</packaging>
+    <name>saas-management</name>
+    <description>管理模块</description>
+
+    <parent>
+        <groupId>cn.swifthealth</groupId>
+        <artifactId>local-saas-project</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>saas-management-configuration</module>
+        <module>saas-manage</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.swifthealth.manage</groupId>
+                <artifactId>saas-hos-info-application</artifactId>
+                <version>${saas.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

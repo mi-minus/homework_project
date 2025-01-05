@@ -1,0 +1,11 @@
+${AnsiColor.GREEN}${AnsiStyle.BOLD}
+
+  .d8888b   8888b.   8888b.  .d8888b
+  88K          "88b     "88b 88K
+  "Y8888b. .d888888 .d888888 "Y8888b.
+       X88 888  888 888  888      X88
+   88888P' "Y888888 "Y888888  88888P'
+
+:: Saas Version : V${application.depends-version}
+:: Application  : ${spring.application.name} (${spring.profiles.active}) V${application.version}${AnsiStyle.FAINT}
+${AnsiStyle.NORMAL}

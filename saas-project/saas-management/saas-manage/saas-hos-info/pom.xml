@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>saas-hos-info</artifactId>
+    <packaging>pom</packaging>
+    <name>management-manage-hos-info</name>
+    <description>科室管理信息模块</description>
+
+    <parent>
+        <groupId>cn.swifthealth.manage</groupId>
+        <artifactId>saas-manage</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>saas-hos-info-application</module>
+        <module>saas-hos-info-repo</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
