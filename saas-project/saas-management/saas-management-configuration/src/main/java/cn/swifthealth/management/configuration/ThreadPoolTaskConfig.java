@@ -11,8 +11,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 线程池
  *
- * @author Xie
- * @date 19-3-19
  */
 @Slf4j
 @Configuration
