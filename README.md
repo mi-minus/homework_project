@@ -15,16 +15,17 @@
 
 
 ## Description of Project Architecture
-![img.png](img/img-0.png)
+![img.png](img/img_0.png)
 
 This project adopts a multi-module approach for construction, this approach facilitates modular management and reduces the coupling between project modules
 
 Besides, this project does not rely on external components that require independent installation, such as MySQL/Redis
 
 The project is combined by three big modules:
-1) **saas-framework** : used for general tools
-2) **saas-management** : used for business logic and project configuration
-3) **service-management**: used for launch entry, test code, and use for extending custom content
+1) **py_performance_test** : stress test scripts and illustration (python3)
+2) **saas-framework** : used for general tools
+3) **saas-management** : used for business logic and project configuration
+4) **service-management**: used for launch entry, test code, and use for extending custom content
 
 
 ## Description of specific codes
