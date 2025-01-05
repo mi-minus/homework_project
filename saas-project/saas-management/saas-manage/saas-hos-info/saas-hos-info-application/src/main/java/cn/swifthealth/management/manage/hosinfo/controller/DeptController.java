@@ -3,6 +3,7 @@ package cn.swifthealth.management.manage.hosinfo.controller;
 import java.util.Optional;
 
 import cn.swifthealth.common.jsonRes.ResponseMessage;
+import cn.swifthealth.common.tools.PageResult;
 import cn.swifthealth.management.manage.hosinfo.entity.BaseDeptInfo;
 import cn.swifthealth.management.manage.hosinfo.service.DeptService;
 import lombok.AllArgsConstructor;
@@ -24,8 +25,10 @@ public class DeptController {
     private final DeptService deptService;
 
     @GetMapping("/list")
-    public ResponseMessage findAllDept(@RequestParam(value = "deptCode", required = false) String deptCode) {
-        return ResponseMessage.success(deptService.findAllDeptByCond(deptCode));
+    public ResponseMessage findAllDept(@RequestParam(value = "deptCode", required = false) String deptCode,
+                                       @RequestParam Integer page,
+                                       @RequestParam Integer size) {
+        return ResponseMessage.success(PageResult.of(page, size, deptService.findAllDeptByCond(deptCode, page, size)));
     }
 
     @PostMapping("/add")

@@ -28,7 +28,7 @@ public class DeptServiceTests {
 
     @Test
     public void findAllDeptByCond() {
-        assertNotNull(deptService.findAllDeptByCond(null));
+        assertNotNull(deptService.findAllDeptByCond(null, 0, 10));
     }
 
     @Test
@@ -55,7 +55,7 @@ public class DeptServiceTests {
         baseDeptInfo.setDeptName("测试科室");
         assertTrue(deptService.updateDeptInfo(baseDeptInfo));
 
-        List<BaseDeptInfo> baseDeptInfo1 = deptService.findAllDeptByCond(deptCode);
+        List<BaseDeptInfo> baseDeptInfo1 = deptService.findAllDeptByCond(deptCode, 0, 10);
         assertTrue(baseDeptInfo1.size() > 0);
         assertEquals(baseDeptInfo1.get(0).getDeptName(), "测试科室");
     }
@@ -70,7 +70,7 @@ public class DeptServiceTests {
                 .build();
         assertTrue(deptService.addDeptInfo(baseDeptInfo));
         assertTrue(deptService.delDeptInfo(deptCode));
-        List<BaseDeptInfo> baseDeptInfo1 = deptService.findAllDeptByCond(deptCode);
+        List<BaseDeptInfo> baseDeptInfo1 = deptService.findAllDeptByCond(deptCode, 0, 10);
         assertTrue(baseDeptInfo1.size() == 0);
     }
 }

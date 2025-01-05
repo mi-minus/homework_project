@@ -27,6 +27,7 @@
         </dependency>
 
         <dependency>
+
             <groupId>cn.swifthealth.management.configuration</groupId>
             <artifactId>saas-management-configuration</artifactId>
             <version>1.0.1-SNAPSHOT</version>
