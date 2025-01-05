@@ -71,7 +71,7 @@ The project is combined by three big modules:
 3) **Update Incident**
 ![img_3.png](img/img_3.png)
 ![img_4.png](img/img_4.png)
-4) **Delete Incident**'
+4) **Delete Incident**
 ![img_5.png](img/img_5.png)
 ![img_6.png](img/img_6.png)
 5) **Unit Test**
