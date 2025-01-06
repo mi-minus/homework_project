@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    metallb.universe.tf/allow-shared-ip: ${LoadBalanceIp}
+  name: ${deploymentName}
+spec:
+  selector:
+    app: ${deploymentName}
+  ports:
+    - name: server
+      protocol: TCP
+      port: ${ExposedPort}
+      targetPort: 8080
+  type: LoadBalancer
+  loadBalancerIP: ${LoadBalanceIp}

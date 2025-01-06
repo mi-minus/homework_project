@@ -27,7 +27,6 @@ The project is combined by three big modules:
 3) **saas-management** : used for business logic and project configuration
 4) **service-management**: used for launch entry, test code, and use for extending custom content
 
-
 ## Description of specific codes
 1) **Bootstrap class**: `cn.swifthealth.starter.ManagementStarter`
 2) **Configuration classes**:
@@ -58,6 +57,22 @@ The project is combined by three big modules:
    `cn.swifthealth.common.jsonRes.APIException`
 8) **Json Result**:
    `cn.swifthealth.common.jsonRes.ResponseMessage`
+
+## How to run
+1. **Method one**: run by idea
+
+   Load the entire project into the idea, compile the mvn clean compile successfully, 
+   and then start the project by executing Management Starter. java
+
+2. **Method two**: execute jar
+
+   `cd homework_project`
+
+   `mvn clean install`
+
+   `cd service-management/management-starter/target/`
+
+   `java -jar management-starter-1.0.0.jar`
 
 ## Interface test cases
 
