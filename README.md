@@ -100,6 +100,18 @@ The project is combined by three big modules:
 > taking a total of about 55 seconds.
 ![img.png](img/img_10.png)
 
+## Visualization
+* **Visit addr**: http://127.0.0.1:9009/management/index.html
+* **Query Dept**
+![img_1.png](img/img_11.png)
+* **Add Dept**
+![img.png](img/img_12.png)
+* **Update Dept**
+![img_2.png](img/img_13.png)
+* **Delete Dept**
+![img_3.png](img/img_14.png)
+
+
 ## Others
 1) MemDb-H2, web access address: http://127.0.0.1:9009/management/h2
    * username: sa

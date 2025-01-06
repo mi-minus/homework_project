@@ -54,7 +54,7 @@
         <!-- ws 、 apache cxf 统一依赖 -->
         <micrometer.version>1.11.8</micrometer.version>
         <jackson-bom.version>2.15.3</jackson-bom.version>
-<!--        <jasypt-spring-boot.version>3.0.5</jasypt-spring-boot.version>-->
+        <!--        <jasypt-spring-boot.version>3.0.5</jasypt-spring-boot.version>-->
 
         <mybatis-flex.version>1.9.9-SNAPSHOT</mybatis-flex.version>
         <!-- mybatis -->
@@ -557,10 +557,15 @@
                 <includes>
                     <include>banner.txt</include>
                     <include>mapper/**/*.xml</include>
+                    <include>static/**/*.ttf</include>
+                    <include>static/**/*.woff</include>
+                    <include>static/*.html</include>
+                    <include>static/*.css</include>
+                    <include>static/*.js</include>
                     <include>*mapper/**/*.xml</include>
                     <!-- Java SPI -->
                     <include>META-INF/services/**</include>
-<!--                    <include>META-INF/spring/**</include>-->
+                    <!--                    <include>META-INF/spring/**</include>-->
                 </includes>
                 <!-- 移除运维复制的乱七八糟的配置文件 -->
                 <excludes>

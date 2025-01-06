@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dept Info</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="element.css">
+</head>
+<body>
+<script src="jquery.min.js"></script>
+<script src="vue.js"></script>
+<!-- 引入组件库 -->
+<script src="element.js"></script>
+<div id="app" style="width: 80%; margin: 0 auto">
+    <h2>Dept Info</h2>
+
+    <el-row>
+        <el-col :span="6" style="margin-bottom: 10px">
+            <el-button type="primary" @click="add">ADD</el-button>
+            <el-input v-model="name" style="width: 70%" @keyup.enter.native="loadTable(0)"></el-input>
+        </el-col>
+    </el-row>
+
+    <el-table
+            :data="page.models"
+            stripe
+            border
+            style="width: 100%">
+        <el-table-column
+                prop="deptCode"
+                label="deptCode">
+        </el-table-column>
+        <el-table-column
+                prop="deptName"
+                label="deptName"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="deptType"
+                label="deptType">
+        </el-table-column>
+        <el-table-column
+                prop="introduction"
+                label="introduction">
+        </el-table-column>
+        <el-table-column
+                prop="special"
+                label="special">
+        </el-table-column>
+        <el-table-column
+                prop="state"
+                label="state">
+        </el-table-column>
+        <el-table-column
+                fixed="right"
+                label="Operation"
+                width="100">
+            <template slot-scope="scope">
+                <el-button type="primary" icon="el-icon-edit" size="small" circle @click="edit(scope.row)"></el-button>
+                <el-button type="danger" icon="el-icon-delete" size="small" circle @click="del(scope.row.deptCode)"></el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+    <el-row type="flex" justify="center" style="margin-top: 10px">
+        <el-pagination
+                layout="prev, pager, next"
+                :page-size="pageSize"
+                :current-page="pageNum"
+                @prev-click="loadTable"
+                @current-change="loadTable"
+                @next-click="loadTable"
+                :total="page.totalElements">
+        </el-pagination>
+    </el-row>
+
+    <el-dialog
+            title="Dept Info"
+            :visible.sync="dialogVisible"
+            width="40%">
+        <el-form ref="form" :model="form" label-width="100px">
+            <el-form-item label="deptCode">
+                <el-input v-model="form.deptCode"></el-input>
+            </el-form-item>
+            <el-form-item label="deptName">
+                <el-input v-model="form.deptName"></el-input>
+            </el-form-item>
+            <el-form-item label="deptType">
+                <el-input v-model="form.deptType"></el-input>
+            </el-form-item>
+            <el-form-item label="introduction">
+                <el-input v-model="form.introduction"></el-input>
+            </el-form-item>
+            <el-form-item label="special">
+                <el-input v-model="form.special"></el-input>
+            </el-form-item>
+            <el-form-item label="state">
+                <el-input v-model="form.state"></el-input>
+            </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogVisible = false">Cancel</el-button>
+            <el-button type="primary" @click="save(1)">Update Submit</el-button>
+            <el-button type="primary" @click="save(0)">Add Submit</el-button>
+        </span>
+    </el-dialog>
+
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            page: {},
+            name: '',
+            pageNum: 0,
+            pageSize: 10,
+            dialogVisible: false,
+            form: {}
+        },
+        created() {
+            this.loadTable(this.pageNum);
+        },
+        methods: {
+            loadTable(num) {
+                this.pageNum = num;
+                $.get("/management/manage/hos/dept/list?page=" + this.pageNum + "&size=" + this.pageSize + "&deptCode=" + this.name).then(res => {
+                    this.page = res.data;
+                });
+            },
+            add() {
+                this.dialogVisible = true;
+                this.form = {};
+            },
+            edit(row) {
+                this.form = row;
+                this.dialogVisible = true;
+            },
+            save(flag) {
+                let data = JSON.stringify(this.form);
+                if (flag === 1) {
+                    // 编辑
+                    $.ajax({
+                        url: '/management/manage/hos/dept/update',
+                        type: 'post',
+                        contentType: 'application/json',
+                        data: data
+                    }).then(res => {
+                        this.dialogVisible = false;
+                        this.loadTable(0);
+                    })
+                } else {
+                    // 新增
+                    $.ajax({
+                        url: '/management/manage/hos/dept/add',
+                        type: 'post',
+                        contentType: 'application/json',
+                        data: data
+                    }).then(res => {
+                        this.dialogVisible = false;
+                        this.loadTable(0);
+                    })
+                }
+            },
+            del(deptCode) {
+                $.ajax({
+                    url: '/management/manage/hos/dept/delete?deptCode=' + deptCode,
+                    type: 'delete',
+                    contentType: 'application/json'
+                }).then(res => {
+                    this.loadTable(0);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
