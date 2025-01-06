@@ -4,7 +4,7 @@ metadata:
   annotations:
     metallb.universe.tf/allow-shared-ip: 192.168.1.21
   name: management-test
-  namespace: local3-test
+  namespace: local-test
 spec:
   loadBalancerIP: 192.168.1.21
   ports:
@@ -26,7 +26,7 @@ metadata:
   labels:
     app: management-test
   name: management-test
-  namespace: local3-test
+  namespace: local-test
 spec:
   replicas: 1
   selector:
@@ -69,7 +69,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.serviceAccountName
-        image: swr.cn-east-2.myhuaweicloud.com/cloudhos/local3-test/2.0/management_test:957
+        image: swr.cn-east-2.myhuaweicloud.com/cloudhos/local-test/2.0/management_test:957
         livenessProbe:
           failureThreshold: 60
           httpGet:
@@ -122,5 +122,5 @@ spec:
           path: /etc/resolv.conf
         name: resolv
       - hostPath:
-          path: /opt/project/project-log/local3-test/management-test/logs
+          path: /opt/project/project-log/local-test/management-test/logs
         name: logs

@@ -22,10 +22,11 @@ This project adopts a multi-module approach for construction, this approach faci
 Besides, this project does not rely on external components that require independent installation, such as MySQL/Redis
 
 The project is combined by three big modules:
-1) **py_performance_test** : stress test scripts and illustration (python3)
-2) **saas-framework** : used for general tools
-3) **saas-management** : used for business logic and project configuration
-4) **service-management**: used for launch entry, test code, and use for extending custom content
+1) **k8s_deploy**: k8s deployment scripts (bash+yaml)
+2) **py_performance_test** : stress test script and illustration (python3)
+3) **saas-framework** : used for general tools
+4) **saas-management** : used for business logic and project configuration
+5) **service-management**: used for launch entry, test code, and use for extending custom content
 
 ## Description of specific codes
 1) **Bootstrap class**: `cn.swifthealth.starter.ManagementStarter`
@@ -109,3 +110,4 @@ The project is combined by three big modules:
 
 2) Page start from 0 in the pagination parameter of list query
 
+3) In k8s development scripts, the variables involved in the script need to be adjusted according to the actual situation.
