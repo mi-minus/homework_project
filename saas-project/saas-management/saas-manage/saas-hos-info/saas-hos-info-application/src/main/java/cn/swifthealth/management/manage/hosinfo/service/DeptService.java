@@ -40,7 +40,7 @@ public class DeptService {
     /**
      * 查询所有的科室
      */
-    public List<BaseDeptInfo> findAllDeptByCond(String deptCode, Integer page, Integer size) {
+    public List<BaseDeptInfo> findAllDeptByCond(String deptCode) {
         List<BaseDeptInfo> depts = new ArrayList<>();
         if (StringUtil.isNotBlank(deptCode)) {
             List<BaseDeptInfo> objects = (List<BaseDeptInfo>) caffeineCache.asMap().get(deptCode);
@@ -66,7 +66,7 @@ public class DeptService {
 
         try {
             depts = jdbcTemplate.query("select dept_code, dept_name, dept_type, introduction, special, state from test.base_dept_info " +
-                    "where state=1 limit " + size + " offset " + page * size,
+                            "where state=1 ",
                     (rs, rowNum) -> new BaseDeptInfo(rs.getString("dept_code"), rs.getString("dept_name"), rs.getString("dept_type"), rs.getString("introduction"), rs.getString("special"), rs.getInt("state")));
         } catch (BadSqlGrammarException e) {
             throw new APIException("请确认是否sql是否正确或者建表成功(建表语句参考文档)");

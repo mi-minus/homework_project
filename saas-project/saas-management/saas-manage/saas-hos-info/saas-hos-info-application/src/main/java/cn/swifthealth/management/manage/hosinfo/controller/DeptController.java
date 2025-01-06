@@ -28,7 +28,7 @@ public class DeptController {
     public ResponseMessage findAllDept(@RequestParam(value = "deptCode", required = false) String deptCode,
                                        @RequestParam Integer page,
                                        @RequestParam Integer size) {
-        return ResponseMessage.success(PageResult.of(page, size, deptService.findAllDeptByCond(deptCode, page, size)));
+        return ResponseMessage.success(PageResult.ofMemory(page, size, deptService.findAllDeptByCond(deptCode)));
     }
 
     @PostMapping("/add")
