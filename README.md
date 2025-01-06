@@ -62,8 +62,8 @@ The project is combined by three big modules:
 ## How to run
 1. **Method one**: run by idea
 
-   Load the entire project into the idea, compile the mvn clean compile successfully, 
-   and then start the project by executing Management Starter. java
+   Load the entire project into the idea, run `mvn clean compile` and compile successfully, 
+   then start the project by run `ManagementStarter.java`
 
 2. **Method two**: execute jar
 
